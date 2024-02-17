@@ -10,8 +10,8 @@ const mime = require("mime-types");
 const s3Client = new S3Client({
   region: "ap-south-1",
   credentials: {
-    accessKeyId: process.env.ACCESS_KEY_ID,
-    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    accessKeyId: "",
+    secretAccessKey: "",
   },
 });
 
@@ -55,7 +55,7 @@ async function init() {
       // publishLog(`uploading ${file}`);
 
       const command = new PutObjectCommand({
-        Bucket: "vercel-clone-outputs",
+        Bucket: "netlify-clone",
         Key: `__outputs/${PROJECT_ID}/${file}`,
         Body: fs.createReadStream(filePath),
         ContentType: mime.lookup(filePath),
