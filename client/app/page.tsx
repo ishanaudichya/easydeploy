@@ -48,13 +48,13 @@ export default function Home() {
       const url = `http://${projectid}.localhost:8000`;
       setDeployPreviewURL(url);
 
-      console.log(`Subscribing to logs:${projectid}`);
+      // console.log(`Subscribing to logs:${projectid}`);
       socket.emit("subscribe", `logs:${projectid}`);
     }
   }, [repoURL]);
 
   const handleSocketIncommingMessage = useCallback((message: string) => {
-    console.log(`[Incomming Socket Message]:`, typeof message, message);
+    // console.log(`[Incomming Socket Message]:`, typeof message, message);
     if(message[0]==='J'){
       setLogs((prev) => [...prev, "Deploying..."]);
     }
