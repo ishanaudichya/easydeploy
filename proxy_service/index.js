@@ -21,4 +21,4 @@ proxy.on("proxyReq", (proxyReq, req, res) => {
   if (url === "/") proxyReq.path += "index.html";
 });
 
-app.listen(PORT, () => console.log(`Proxy Running at${PORT}`));
+app.listen(PORT, () => console.log(`Proxy Running at ${PORT}`));
