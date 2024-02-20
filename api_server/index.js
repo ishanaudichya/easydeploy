@@ -14,7 +14,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({ origin: "*" }));
 
-const subscriber = new Redis("");
+const subscriber = new Redis(process.env.REDIS_URL);
 
 const io = new Server({ cors: "*" });
 
