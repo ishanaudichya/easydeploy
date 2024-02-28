@@ -5,7 +5,7 @@ const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 const mime = require("mime-types");
 const Redis = require("ioredis");
 
-const redisuri = process.env.REDIS_URL;
+// const redisuri = process.env.REDIS_URL;
 const publisher = new Redis();
 
 const s3Client = new S3Client({
@@ -42,7 +42,7 @@ async function init() {
   p.on("close", async function () {
     console.log("Build Complete");
     publishLog(`Build Complete`);
-    const distFolderPath = path.join(__dirname, "output", "dist");
+    const distFolderPath = path.join(__dirname, "output", "build");
     const distFolderContents = fs.readdirSync(distFolderPath, {
       recursive: true,
     });
