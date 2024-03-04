@@ -4,7 +4,7 @@ const httpProxy = require("http-proxy");
 const app = express();
 const PORT = 8000;
 
-const BASE_PATH = "https://netlify-clone.s3.ap-south-1.amazonaws.com/__outputs";
+const BASE_PATH = "https://netlify-clone.s3.ap-south-1.amazonaws.com/__outputs"; // Replace with your S3 bucket URL
 
 const proxy = httpProxy.createProxy();
 
